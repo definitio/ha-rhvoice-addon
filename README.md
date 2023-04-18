@@ -8,26 +8,17 @@ This add-on based on [rhvoice-rest](https://github.com/Aculeasis/rhvoice-rest).
 
 ## Installation
 
-- Find a folder to store add-on
+1. Add a repository by clicking a button: [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fdefinitio%2Fha-rhvoice-addon)
+   or by going to the Supervisor panel in Home Assistant, clicking on the store icon in the top right, paste the URL `https://github.com/definitio/ha-rhvoice-addon` into the repository textarea and click on Save.
 
-    To get started, we first need access to where Home Assistant looks for local add-ons. For this you can use the Samba or the SSH add-ons.
-
-    For Samba, once you have enabled and started it, your Home Assistant instance will show up in your local network tab and share a folder called `addons`.
-
-    For SSH, you will have to install it. Before you can start it, you will have to have a private/public key pair and store your public key in the add-on config (see docs for more info). Once started, you can SSH to Home Assistant and store your custom add-ons in the `/addons` directory.
-
-- Copy the contents of a `ha-rhvoice-addon/` to `addons/ha-rhvoice-addon/`.
-- Open the Home Assistant frontend
-- Go to "Settings"
-- Click on "Add-ons"
-- Click "add-on store" in the bottom right corner [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
-- On the top right overflow menu, click the "Check for updates" button
-- You should now see a new section at the top of the store called "Local add-ons" that lists `RHVoice`
-- Click on `RHVoice` add-on to go to the details page
-- Install add-on
-- Start add-on
-- Install and configure the [RHVoice component for Home Assistant](https://github.com/definitio/ha-rhvoice)
+2. Install RHVoice Home Assistant add-on
+3. Install [RHVoice Home Assistant integration](https://github.com/definitio/ha-rhvoice)
+4. Set `host: localhost` in RHVoice configuration.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
+
+## Other
+
+You can buy me a coffee via Bitcoin donation for help me to maintain that project: `bc1qd6khey9xkss6vgd6fqpqdyq4lehtepajkcf256`
