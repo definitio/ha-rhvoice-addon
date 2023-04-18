@@ -19,6 +19,21 @@ This add-on based on [rhvoice-rest](https://github.com/Aculeasis/rhvoice-rest).
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 
+## Rhasspy integration
+
+Add to your profile:
+
+```json
+"text_to_speech": {
+  "system": "remote",
+  "remote": {
+      "url": "http://localhost:8080/rhasspy?voice=anna"
+  }
+}
+```
+
+[Documentation](https://rhasspy.readthedocs.io/en/latest/text-to-speech/#remote)
+
 ## Other
 
 You can buy me a coffee via Bitcoin donation for help me to maintain that project: `bc1qd6khey9xkss6vgd6fqpqdyq4lehtepajkcf256`
