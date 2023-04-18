@@ -51,11 +51,17 @@ def set_headers():
 
 
 @app.route("/say")
+@app.route("/rhasspy", methods=["POST"])
 def say():
-    text = " ".join(
-        [x for x in parse.unquote(request.args.get("text", "")).splitlines() if x]
-    )
-    format_ = request.args.get("format", DEFAULT_FORMAT)
+    # https://rhasspy.readthedocs.io/en/latest/text-to-speech/#remote
+    if request.path == "/rhasspy" and request.method == "POST":
+        text = request.get_data(as_text=True)
+        format_ = "wav"
+    else:
+        text = " ".join(
+            [x for x in parse.unquote(request.args.get("text", "")).splitlines() if x]
+        )
+        format_ = request.args.get("format", DEFAULT_FORMAT)
     voice = request.args.get("voice", DEFAULT_VOICE)
 
     if voice not in SUPPORT_VOICES:
