@@ -5,7 +5,8 @@ import os
 from shlex import quote
 from urllib import parse
 
-from flask import Flask, request, make_response, Response, stream_with_context, escape
+from flask import Flask, request, make_response, Response, stream_with_context
+from markupsafe import escape
 from rhvoice_wrapper import TTS
 
 try:
