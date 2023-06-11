@@ -1,5 +1,6 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
+LABEL org.opencontainers.image.source=https://github.com/definitio/ha-rhvoice-addon
 
 ARG BUILD_ARCH
 ARG RUNTIME_PACKAGES="lame python3 locales opus-tools flac python3-setuptools"
