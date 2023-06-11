@@ -2,6 +2,9 @@
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/definitio/ha-rhvoice-addon/builder.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/definitio/ha-rhvoice-addon-aarch64?label=aarch64%20pulls)
+![Docker Pulls](https://img.shields.io/docker/pulls/definitio/ha-rhvoice-addon-amd64?label=amd64%20pulls)
 
 This add-on based on [rhvoice-rest](https://github.com/Aculeasis/rhvoice-rest).
 
@@ -34,4 +37,4 @@ Add to your profile:
 
 ## Other
 
-You can buy me a coffee via Bitcoin donation for help me to maintain that project: `bc1qd6khey9xkss6vgd6fqpqdyq4lehtepajkcf256`
+You can buy me a coffee via Bitcoin donation: `bc1qd6khey9xkss6vgd6fqpqdyq4lehtepajkcf256`
