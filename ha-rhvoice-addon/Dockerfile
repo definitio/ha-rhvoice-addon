@@ -2,9 +2,9 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH
-ARG RUNTIME_PACKAGES="lame python3 locales opus-tools flac"
-ARG BUILD_PACKAGES="git python3-pip python3-setuptools python3-wheel wget ca-certificates"
-ARG PIP_PACKAGE="flask pymorphy2 rhvoice-wrapper"
+ARG RUNTIME_PACKAGES="lame python3 locales opus-tools flac python3-setuptools"
+ARG BUILD_PACKAGES="git python3-pip python3-wheel wget ca-certificates"
+ARG PIP_PACKAGE="flask pymorphy2 pymorphy2-dicts-ru rhvoice-wrapper"
 
 RUN apt-get update -y \
   && apt-get -y install --no-install-recommends $RUNTIME_PACKAGES \
