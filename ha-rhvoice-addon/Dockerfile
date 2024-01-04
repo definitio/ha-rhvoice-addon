@@ -5,7 +5,8 @@ LABEL org.opencontainers.image.source=https://github.com/definitio/ha-rhvoice-ad
 ARG BUILD_ARCH
 ARG RUNTIME_PACKAGES="lame python3 locales opus-tools flac python3-setuptools"
 ARG BUILD_PACKAGES="git python3-pip python3-wheel wget ca-certificates"
-ARG PIP_PACKAGE="flask pymorphy2 pymorphy2-dicts-ru rhvoice-wrapper"
+
+COPY requirements.txt /tmp/requirements.txt
 
 RUN apt-get update -y \
   && apt-get -y install --no-install-recommends $RUNTIME_PACKAGES \
@@ -13,7 +14,7 @@ RUN apt-get update -y \
   && apt-get -y install --no-install-recommends $BUILD_PACKAGES \
   && cd /usr/share/locale/ && ls | grep -v 'ru\|en\|locale.alias' | xargs rm -rf \
   && locale-gen ru_RU.UTF-8 \
-  && pip3 install $PIP_PACKAGE \
+  && pip3 install -r /tmp/requirements.txt \
   && wget -q https://raw.githubusercontent.com/Aculeasis/ff/main/rhv_bin.py -O rhv_bin.py \
   && pip3 install $(python3 rhv_bin.py 0 0 data) \
   && pip3 install $(python3 rhv_bin.py linux $BUILD_ARCH) \
