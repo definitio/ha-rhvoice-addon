@@ -33,6 +33,7 @@ app = Flask(__name__, static_url_path="")
 
 
 def voice_streamer(text, voice, format_, sets):
+    # pylint: disable=used-before-assignment
     with tts.say(text, voice, format_, None, sets or None) as read:
         for chunk in read:
             yield chunk
@@ -46,7 +47,7 @@ def chunked_stream(stream):
 
 
 def set_headers():
-    if CHUNKED_TRANSFER:
+    if CHUNKED_TRANSFER:  # pylint: disable=used-before-assignment
         return {"Transfer-Encoding": "chunked", "Connection": "keep-alive"}
     return None
 
@@ -65,7 +66,7 @@ def say():
         format_ = request.args.get("format", DEFAULT_FORMAT)
     voice = request.args.get("voice", DEFAULT_VOICE)
 
-    if voice not in SUPPORT_VOICES:
+    if voice not in SUPPORT_VOICES:  # pylint: disable=used-before-assignment
         return make_response(
             f"Unknown voice: '{escape(voice)}'. Support: {', '.join(SUPPORT_VOICES)}.",
             400,
